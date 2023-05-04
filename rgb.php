@@ -27,7 +27,7 @@ class Color
     /**
      * @throws Exception
      */
-    public function setRed(int $red): void
+    private function setRed(int $red): void
     {
         $this->red = $this->validateRange($red);
     }
@@ -40,7 +40,7 @@ class Color
     /**
      * @throws Exception
      */
-    public function setGreen(int $green): void
+    private function setGreen(int $green): void
     {
         $this->green = $this->validateRange($green);
     }
@@ -53,7 +53,7 @@ class Color
     /**
      * @throws Exception
      */
-    public function setBlue(int $blue): void
+    private function setBlue(int $blue): void
     {
         $this->blue = $this->validateRange($blue);
     }
@@ -113,8 +113,7 @@ try {
     $randomColor = Color::getRandom();
     echo "Random Color: " . $randomColor;
 
-    $sameColor = clone($color);
-    $sameColor->setGreen(120);
+    $sameColor = new Color(200, 100, 200);
     echo "Same Color: " . $sameColor;
     echo 'Same Color ' . ($sameColor->equals($color) ? 'Equal' : 'Not Equal') . ' to Base Color' . PHP_EOL;
 } catch (Exception $exception) {
