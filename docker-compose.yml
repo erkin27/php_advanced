@@ -15,7 +15,7 @@ services:
     image: postgres
     restart: always
     volumes:
-      - ./docker/db:/var/lib/postgresql/data
+      - ./docker/.data/postgresql:/var/lib/postgresql/data
     ports:
       - "5433:5432"
     environment:
