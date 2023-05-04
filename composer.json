@@ -1,0 +1,18 @@
+{
+    "name": "php/advanced",
+    "autoload": {
+        "psr-4": {
+            "Php\\Advanced\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Erkin Bokushev",
+            "email": "bokushev@gmail.com"
+        }
+    ],
+    "require": {
+        "larapack/dd": "^1.1",
+        "ext-pdo": "*"
+    }
+}
