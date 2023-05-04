@@ -116,7 +116,7 @@ try {
     $sameColor = clone($color);
     $sameColor->setGreen(120);
     echo "Same Color: " . $sameColor;
-    echo 'Same Color ' . ($color->equals($sameColor) ? 'Equal' : 'Not Equal') . ' to Base Color' . PHP_EOL;
+    echo 'Same Color ' . ($sameColor->equals($color) ? 'Equal' : 'Not Equal') . ' to Base Color' . PHP_EOL;
 } catch (Exception $exception) {
     echo $exception->getMessage() . PHP_EOL;
 }
