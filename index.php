@@ -1,10 +1,15 @@
 <?php
 
 use Php\Advanced\Connections\DB;
+use Php\Advanced\Service;
 
-require_once 'vendor/autoload.php';
+require_once 'autoloader.php';
 
 $query = 'select * from public.students';
 
 $data = DB::getPDO()->query($query)->fetchAll();
-dd($data);
+
+$service = new Service();
+$result = $service->get();
+dd($data, $result);
+
