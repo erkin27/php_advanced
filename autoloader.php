@@ -27,7 +27,6 @@ class Autoloader
                     require_once $dir . DIRECTORY_SEPARATOR . $file;
                 }
             }
-
         }
     }
 
@@ -41,9 +40,9 @@ class Autoloader
                 $subPath = strtolower(trim($subPath, DIRECTORY_SEPARATOR));
                 $fileName = substr($subName, $lastPos + 1) . '.php';
 
-                $filePath = $dir . DIRECTORY_SEPARATOR . $subPath . DIRECTORY_SEPARATOR . $fileName;
-                if (file_exists($filePath)) {
-                    require_once $filePath;
+                $file = $dir . DIRECTORY_SEPARATOR . $subPath . DIRECTORY_SEPARATOR . $fileName;
+                if (file_exists($file)) {
+                    require_once $file;
                 }
             }
         }
