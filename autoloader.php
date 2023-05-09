@@ -23,9 +23,7 @@ class Autoloader
         return self::$loader;
     }
 
-
     private array $namespaceClassMap = [];
-
 
     public function addNamespace(string $namespace, string $dir): void
     {
