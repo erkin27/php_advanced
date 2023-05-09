@@ -1,8 +1,31 @@
 <?php
 
+$files = require 'autoload_files.php';
+$classMap = require 'autoload_namespaces.php';
+
+foreach ($files as $file) {
+    Autoloader::getLoader()->addFiles($file);
+}
+
+foreach ($classMap as $namespace => $dir) {
+    Autoloader::getLoader()->addNamespace($namespace, $dir);
+}
+
 class Autoloader
 {
+    private static ?Autoloader $loader = null;
+
+    public static function getLoader(): self
+    {
+        if (self::$loader === null) {
+            self::$loader = new self();
+        }
+        return self::$loader;
+    }
+
+
     private array $namespaceClassMap = [];
+
 
     public function addNamespace(string $namespace, string $dir): void
     {
