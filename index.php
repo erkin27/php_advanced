@@ -1,10 +1,10 @@
 <?php
 
-use Php\Advanced\Connections\DB;
+use Php\Advanced\deliveries\SmsDelivery;
+use Php\Advanced\formats\RawFormat;
+use Php\Advanced\Logger;
 
 require_once 'vendor/autoload.php';
 
-$query = 'select * from public.students';
-
-$data = DB::getPDO()->query($query)->fetchAll();
-dd($data);
+$logger = new Logger(new RawFormat(), new SmsDelivery());
+$logger->log('Emergency error! Please fix me!');
