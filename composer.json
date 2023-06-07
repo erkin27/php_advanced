@@ -2,8 +2,13 @@
     "name": "php/advanced",
     "autoload": {
         "psr-4": {
-            "Php\\Advanced\\": "src/"
-        }
+            "Config\\": "Config/",
+            "Core\\": "Core/",
+            "App\\": "App/"
+        },
+        "files": [
+            "Config/helper_functions.php"
+        ]
     },
     "authors": [
         {
@@ -13,6 +18,7 @@
     ],
     "require": {
         "larapack/dd": "^1.1",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "vlucas/phpdotenv": "^5.5"
     }
 }

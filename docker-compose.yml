@@ -2,7 +2,7 @@ version: '3.9'
 services:
   app:
     build:
-      context: ./docker/app
+      context: ./.docker/app
     restart: always
     volumes:
       - .:/var/www/html
@@ -15,7 +15,7 @@ services:
     image: postgres
     restart: always
     volumes:
-      - ./docker/.data/postgresql:/var/lib/postgresql/data
+      - ./.docker/.data/postgresql:/var/lib/postgresql/data
     ports:
       - "5433:5432"
     environment:
