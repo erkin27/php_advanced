@@ -56,7 +56,7 @@ return new class
         $migrations = array_values(array_diff($migrations, ['.', '..', static::MIGRATIONS_TABLE_SQL]));
 
         foreach ($migrations as $migration) {
-            if (! $this->isMigrationsExist($migration)) {
+            if (! $this->isMigrationExist($migration)) {
 
                 $sql = file_get_contents(static::SCRIPTS_DIR . $migration);
                 $query = $this->db->prepare($sql);
@@ -73,7 +73,7 @@ return new class
         d('----- Fetching migrations - DONE -----');
     }
 
-    protected function isMigrationsExist(string $migration): bool
+    protected function isMigrationExist(string $migration): bool
     {
         $q = $this->db->prepare("SELECT * FROM migrations WHERE name = :name");
         $q->execute([':name' => $migration]);
