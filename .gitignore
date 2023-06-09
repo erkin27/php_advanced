@@ -1,6 +1,6 @@
 /vendor/
 
 # docker volume with database data
-docker/.data
+.docker/.data
 
 .idea/
